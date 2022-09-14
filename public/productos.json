@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "title": "desk",
+        "price": 300,
+        "thumbnail": "https://img.icons8.com/dotty/344/desk.png"
+    },
+
+    {
+        "id":2,
+        "title": "pen",
+        "price": 50,
+        "thumbnail": "https://img.icons8.com/dotty/344/ball-point-pen.png"
+    },
+    {
+        "id":3,
+        "title": "eraser",
+        "price": 50,
+        "thumbnail": "https://img.icons8.com/dotty/344/erase.png"
+    },
+    {
+        "id":4,
+        "title": "Copy machine",
+        "price": 5000,
+        "thumbnail": "https://img.icons8.com/dotty/344/copy-machine.png"
+    }
+]
