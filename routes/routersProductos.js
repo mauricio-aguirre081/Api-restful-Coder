@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
         const id = productos.length + 1;
         const NewProduct = {... req.body, id}
         productos.push(NewProduct);
-        res.json("Produto añadido");
+        res.status(201).json({NewProduct});
     } else {
         res.send("Error al añadir")
     }
@@ -24,10 +24,10 @@ router.get('/:id', (req, res) => {
         return product.id === parseInt(req.params.id) 
     })
     if (!productoEncontrado) 
-    return res.json({ 
+    return res.status(404).json({ 
         error: "Producto no encontrado"
     })
-    res.json(productoEncontrado)
+    res.json({message: 'productoEncontrado'})
 })
 
 router.delete('/:id', (req, res) => {
@@ -35,12 +35,12 @@ router.delete('/:id', (req, res) => {
         return product.id === parseInt(req.params.id) 
     })
     if (!productoEncontrado) 
-    return res.json({ 
+    return res.status(404).json({ 
         error: "Producto no encontrado"
     })
 
     const productos = productos.filter(p => p.id !== parseInt(req.params.id))
-    res.json('Producto eliminado')
+    res.status(200).json({message: 'Producto eliminado'})
 })
 
 
@@ -50,7 +50,7 @@ router.put('/:id', (req, res) => {
         return product.id === parseInt(req.params.id) 
     })
     if (!productoEncontrado) 
-    return res.json({ 
+    return res.status(404).json({ 
         error: "Producto no encontrado"
     })
 
